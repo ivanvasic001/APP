@@ -1,0 +1,31 @@
+<div style="margin: 20px;">
+    <a [routerLink]="['/phones', 0]">Add Phone</a>
+</div>
+<div class='card'>
+    <div class='card-header'>
+      {{pageTitle}}
+    </div>
+    <div class='card-body'>
+      <div class='table-responsive'>
+        <table class='table' *ngIf='phones && phones.length'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let phone of phones; index as i'>
+                <td>{{phone.name}}</td>
+                <td>{{phone.phoneNumber}}</td>
+                <td><button type="button" 
+                    class="btn btn-outline-secondary"
+                    (click)="deletePhone(i)">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

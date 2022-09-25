@@ -1,0 +1,44 @@
+<form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)" novalidate>
+<div class="card">
+  <div class="card-header">
+    <span>Add Phone</span>
+  </div>
+  <div style="padding:5px 20px 0;">
+    <!-- Name -->
+    <div class="form-group">
+        <label for="userName">
+            Name:
+        </label>
+        <input  id="userName"
+            name="userName"
+            type="text" 
+            class="form-control"
+            [(ngModel)]="phone.name"
+            #userName="ngModel">
+    </div>
+    <!-- Phone Number -->
+    <div class="form-group">
+        <label for="phoneNumber">
+            Phone Number:
+        </label>
+        <input  id="phoneNumber"
+            name="phoneNumber"
+            type="text" 
+            class="form-control"
+            [(ngModel)]="phone.phoneNumber"
+            #userName="ngModel">
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="submit"
+        class="btn btn-outline-primary"
+        style="width:80px; margin-right: 10px;">Save
+    </button>
+    <button type="button" 
+        class="btn btn-outline-secondary"
+        style="width:80px"
+        (click)='onCancel()'>Cancel
+    </button>
+  </div>
+</div>
+</form>
